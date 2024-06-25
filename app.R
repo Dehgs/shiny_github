@@ -13,10 +13,8 @@ ui <- fluidPage(
                   max = 50,
                   value = 30)
     ),
-    
     mainPanel(
-      plotOutput("distPlot"),
-      leafletOutput("mymap")
+      plotOutput("distPlot")
     )
   )
 )
@@ -31,16 +29,6 @@ server <- function(input, output) {
          xlab = 'Waiting time to next eruption (in mins)',
          main = 'Histogram of waiting times')
   })
-
-  output$mymap <- renderLeaflet({
-      the_shape <-
-        readRDS(
-          "the_shape.rds"
-        )
-
-      leaflet(the_shape) |>
-        addPolygons(fillColor = ~colour, weight = 1, fillOpacity = 1, color = "black")
-    })
 }
 
 # Run the application 
