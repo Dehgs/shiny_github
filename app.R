@@ -15,13 +15,8 @@ ui <- fluidPage(
     ),
     
     mainPanel(
-<<<<<<< HEAD
-      plotOutput("distPlot")#,
-      # leafletOutput("mymap")
-=======
       plotOutput("distPlot"),
       leafletOutput("mymap")
->>>>>>> 72626d2a99b55efb3e689377a7291b6d0978cfcf
     )
   )
 )
@@ -36,13 +31,6 @@ server <- function(input, output) {
          xlab = 'Waiting time to next eruption (in mins)',
          main = 'Histogram of waiting times')
   })
-<<<<<<< HEAD
-  
-  # output$mymap <- renderLeaflet({
-  #   leaflet(the_shape) |>
-  #     addPolygons(fillColor = ~colour, weight = 1, fillOpacity = 1, color = "black")
-  # })
-=======
 
   output$mymap <- renderLeaflet({
       the_shape <-
@@ -53,7 +41,6 @@ server <- function(input, output) {
       leaflet(the_shape) |>
         addPolygons(fillColor = ~colour, weight = 1, fillOpacity = 1, color = "black")
     })
->>>>>>> 72626d2a99b55efb3e689377a7291b6d0978cfcf
 }
 
 # Run the application 
