@@ -29,7 +29,8 @@ ui <- fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotOutput("distPlot"),
-      leafletOutput("mymap")
+      leafletOutput("mymap"),
+      dataTableOutput("mytable")
     )
   )
 )
@@ -59,6 +60,13 @@ server <- function(input, output) {
     leaflet(the_shape) |>
       addPolygons(fillColor = ~colour, weight = 1, fillOpacity = 1, color = "black")
   })
+  
+  output$mytable <- renderDataTable(
+    iris,
+    options = list(
+      pageLength = 5
+    )
+  )
 }
 
 # Run the application 
