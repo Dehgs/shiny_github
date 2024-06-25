@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(leaflet)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -27,7 +28,8 @@ ui <- fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      plotOutput("distPlot")
+      plotOutput("distPlot"),
+      leafletOutput("mymap")
     )
   )
 )
@@ -44,6 +46,18 @@ server <- function(input, output) {
     hist(x, breaks = bins, col = 'darkgray', border = 'white',
          xlab = 'Waiting time to next eruption (in mins)',
          main = 'Histogram of waiting times')
+  })
+  
+  output$mymap <- renderLeaflet({
+    the_shape <-
+      "https://raw.githubusercontent.com/Dehgs/shiny_github/leaflet_test/the_shape.rds" |>
+      url() |>
+      gzcon() |>
+      readRDS()
+    
+    
+    leaflet(the_shape) |>
+      addPolygons(fillColor = ~colour, weight = 1, fillOpacity = 1, color = "black")
   })
 }
 
