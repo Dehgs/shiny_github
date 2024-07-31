@@ -1,0 +1,179 @@
+body {
+  text-align: justify;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+/*
+  .shinylive-viewer iframe {
+    border-radius: 0px !important;
+  }
+  */
+@media (min-width: 992px) {
+  /*
+    .logo {
+      content: url("tpk_logo.svg");
+    }
+    */
+  .logo {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    visibility: visible;
+  }
+  .navbar-dark,
+  .navbar.navbar-inverse,
+  .navbar[data-bs-theme="dark"] {
+    height: 60px;
+  }
+  .navbar-header {
+    padding-top: 8px;
+  }
+}
+.navbar-brand {
+  padding-top: 8px;
+}
+@media (max-width: 992px) {
+  .logo {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+}
+.navbar.navbar-default.navbar-static-top.navbar-inverse {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+//@media (min-width: 767px) and (max-width: 890px) {
+//  .logo {
+//    content: url("tpk_short_logo.svg");
+//  }
+//}
+@media (max-width: 992px) {
+  .navbar-header {
+    padding-top: 0px;
+    margin-top: -1px;
+    margin-bottom: 1px;
+  }
+  .nav-link {
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
+.navbar {
+  --bs-navbar-nav-link-padding-x: 0.938rem;
+  --bs-navbar-brand-font-size: 19px;
+}
+.navbar-header {
+  height: 44px;
+}
+navbar-header .navbar-brand {
+  font-size: 19px;
+}
+.nav-link {
+  height: 60px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 60px;
+  font-size: 15px;
+}
+@media (min-width: 992px) {
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-tabs > li > a.active,
+  .navbar-nav .nav-pills > li > a.active,
+  .navbar-nav :where(ul.nav.navbar-nav > li) > a.active,
+  .navbar-nav .nav-link.show,
+  .navbar-nav .nav-link.in,
+  .navbar-nav .nav-tabs > li > a.show,
+  .navbar-nav .nav-tabs > li > a.in,
+  .navbar-nav .nav-pills > li > a.show,
+  .navbar-nav .nav-pills > li > a.in,
+  .navbar-nav :where(ul.nav.navbar-nav > li) > a.show,
+  .navbar-nav :where(ul.nav.navbar-nav > li) > a.in {
+    background-color: #004e62 !important;
+  }
+}
+.nav-link,
+.nav-tabs > li > a,
+.nav-pills > li > a,
+:where(ul.nav.navbar-nav > li) > a {
+  color: white;
+}
+.nav-link:hover,
+.nav-tabs > li > a:hover,
+.nav-pills > li > a:hover,
+:where(ul.nav.navbar-nav > li) > a:hover,
+.nav-link:focus,
+.nav-tabs > li > a:focus,
+.nav-pills > li > a:focus,
+:where(ul.nav.navbar-nav > li) > a:focus {
+  color: #89e6ff;
+}
+.bslib-sidebar-layout > .sidebar > .sidebar-content {
+  padding-top: calc(var(--_icon-button-size, 2rem) * 1.1);
+  text-align: left;
+}
+.form-check-input:focus,
+.shiny-input-container .checkbox input:focus,
+.shiny-input-container .checkbox-inline input:focus,
+.shiny-input-container .radio input:focus,
+.shiny-input-container .radio-inline input:focus,
+.accordion .accordion-button:not(.collapsed):focus,
+.selectize-input.items.full.has-options.has-items,
+button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+.accordion {
+  --bs-accordion-bg: lightgrey;
+  --bs-accordion-border-color: lightgrey;
+}
+.accordion-body:after {
+  content: "";
+  /*
+    width: calc(100% - -4px);
+    color: transparent;
+    border-style: solid;
+    border-bottom: lightgrey;
+    border-left: transparent;
+    border-right: transparent;
+    border-width: 1px;
+    */
+}
+.bslib-sidebar-layout
+  > .sidebar
+  > .sidebar-content
+  > .accordion:not(:last-child) {
+  margin-bottom: -1rem;
+}
+.accordion-button,
+.accordion .accordion-button:not(.collapsed) {
+  background-color: #bdbdbd;
+}
+.bslib-sidebar-layout
+  > .sidebar
+  > .sidebar-content
+  > .accordion
+  .accordion-body {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+@media (min-width: 666px) {
+  #footer_logo {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    height: auto;
+  }
+}
+@media (max-width: 665px) {
+  #footer_logo {
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    height: 0;
+    overflow: hidden;
+    display: block;
+  }
+}
+#footer a {
+  text-decoration: none;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
